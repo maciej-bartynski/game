@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Test /> matches snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "borderRadius": 5,
+      "borderWidth": 1,
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+  testID="componentExample__button"
+>
+  <Text>
+     : 
+    0
+  </Text>
+</View>
+`;
