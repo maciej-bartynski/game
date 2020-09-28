@@ -4,7 +4,7 @@ const moduleResolver = [
     "alias": {
       "components": "./src/components",
       "pages": "./src/pages",
-      "utils": "./src/modules",
+      "utils": "./src/utils",
       "styles": "./src/styles",
       "reducers": "./src/reducers",
       "actions": "./src/actions",
