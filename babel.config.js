@@ -8,8 +8,9 @@ const moduleResolver = [
       "styles": "./src/styles",
       "reducers": "./src/reducers",
       "actions": "./src/actions",
-      "hooks": "./src/hooks"
-    },
+      "hooks": "./src/hooks",
+      "app": "./src/app"
+    }
   }
 ]
 

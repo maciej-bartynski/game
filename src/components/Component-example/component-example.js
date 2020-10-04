@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import exampleAction from 'actions/exampleState';
 
 const ComponentExample = ({ label, styles }) => {
-  const [counter, setCounter] = useState(0);
+  const counter = useSelector((state) => state.exampleState);
+  const dispatch = useDispatch();
 
-  const handleClick = () => setCounter(counter + 1);
+  const handleClick = () => {
+    dispatch(exampleAction(counter + 1));
+  };
 
   return (
     <TouchableOpacity
@@ -12,7 +17,9 @@ const ComponentExample = ({ label, styles }) => {
       style={styles.root}
       onPress={handleClick}
     >
-      <Text>
+      <Text
+        testID="componentExample__text"
+      >
         {label}
         {' '}
         :

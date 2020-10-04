@@ -21,8 +21,13 @@ exports['<Test /> matches snapshot 1'] = `
   }
   testID="componentExample__button"
 >
-  <Text>
-     : 
+  <Text
+    testID="componentExample__text"
+  >
+    default label
+     
+    :
+     
     0
   </Text>
 </View>

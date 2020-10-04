@@ -1,37 +1,31 @@
-import React, { useState as useStateMock } from 'react';
+import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react-native';
-import Test from './component-example';
-
-jest.mock('react', () => ({
-  ...jest.requireActual('react'),
-  useState: jest.fn(),
-}));
+import WrapWithRedux from 'app/wrapWithRedux';
+import Test from './index';
 
 describe('<Test />', () => {
 
-  let mockedState = false;
-
-  beforeEach(() => {
-    const setState = jest.fn(() => { mockedState = 'state changed'; });
-    useStateMock.mockImplementation((init) => [init, setState]);
-  });
-
   it('matches snapshot', () => {
-    const tree = renderer.create(<Test />).toJSON();
+    const tree = renderer.create(
+      <WrapWithRedux>
+        <Test />
+      </WrapWithRedux>
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('has 1 child', () => {
-    const tree = renderer.create(<Test />).toJSON();
-    expect(tree.children.length).toBe(1);
-  });
-
-  it('is pressed correctly', () => {
-    const ComponentRendered = render(<Test />);
+  it('is pressed correctly', async () => {
+    const ComponentRendered = render(
+      <WrapWithRedux>
+        <Test label="word" />
+      </WrapWithRedux>
+    );
     const button = ComponentRendered.getByTestId('componentExample__button');
-    expect(mockedState).not.toBe('state changed');
+    const text = ComponentRendered.getByTestId('componentExample__text');
     fireEvent.press(button);
-    expect(mockedState).toBe('state changed');
+    expect(text.children.join('').trim()).toBe('word : 1');
+    fireEvent.press(button);
+    expect(text.children.join('').trim()).toBe('word : 2');
   });
 });

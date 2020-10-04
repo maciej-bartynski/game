@@ -4,7 +4,6 @@ import ComponentExample from './component-example';
 
 ComponentExample.propTypes = {
   label: PropTypes.string,
-  ddd: PropTypes.number.isRequired,
   styles: PropTypes.shape({
     root: stylesType,
   })
