@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports['<Home /> matches snapshot 1'] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text>
+    Home page
+  </Text>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "opacity": 1,
+        "padding": 10,
+      }
+    }
+    testID="componentExample__button"
+  >
+    <Text
+      testID="componentExample__text"
+    >
+      Button was clicked times
+       
+      :
+       
+      0
+    </Text>
+  </View>
+</View>
+`;
